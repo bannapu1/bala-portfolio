@@ -1,0 +1,580 @@
+/* GENERAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Set background color to black */
+    color: #ffffff; /* Set default text color to light gray */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: #b0b0b0; /* Set paragraph text color to a lighter gray */
+}
+
+/* TRANSITION */
+
+a,
+.btn {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* DESKTOP NAV */
+
+.header {
+    width: 100%;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+.nav-links {
+    list-style: none;
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.logo img {
+    max-width: 35px;
+    height: auto;
+}
+
+a {
+    color: #e0e0e0; /* Light gray color for links */
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: rgb(96, 145, 204); /* Keep hover color */
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(96, 145, 204);
+}
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e0; /* Light gray color for hamburger icon */
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background-color: #333; /* Dark gray background for menu */
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e0e0e0; /* Light gray color for menu links */
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a:hover {
+    color: rgb(96, 145, 204);
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:nth-child(1),
+.hamburger-icon span:nth-child(2),
+.hamburger-icon span:nth-child(3) {
+    transform: none;
+}
+
+/* SECTIONS */
+
+main {
+    margin-top: 60px;
+}
+
+section {
+    padding-top: 4vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+    color: #e0e0e0; /* Light gray color for section text */
+}
+
+/* PROFILE SECTION */
+
+#profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    height: 85vh;
+}
+
+.section_pic_container {
+    display: flex;
+    height: 475px;
+    width: 475px;
+    margin: auto 0;
+}
+
+.section_text {
+    align-self: center;
+    text-align: center;
+}
+
+.section_text p {
+    font-weight: 600;
+}
+
+.section_text_p1 {
+    text-align: center;
+}
+
+/* section_text_p2 down the size */
+.section_text_p2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.title_1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #e0e0e0; /* Light gray color for title */
+}
+
+.btn_container {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.btn_color {
+    background: linear-gradient(90deg, #6091cc, #ef8ebf);
+    border: none;
+    color: white;
+    padding: 1rem 1rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn_color:hover {
+    background-color: #4f7ebf;
+    transform: scale(1.05);
+}
+
+/* ABOUT SECTION */
+
+#about {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.title_2 {
+    font-size: 2.5rem;
+    position: relative;
+    color: #e0e0e0; /* Light gray color for title */
+}
+
+.title_2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3.5px;
+    background: linear-gradient(90deg, #6091cc, #ef8ebf);
+    border-radius: 1px;
+}
+
+.text_container {
+    margin: 2rem auto;
+    /* text-align: center;  */
+    /* Ensure the entire container aligns text to the left */
+}
+
+.text_container h3 {
+    text-align: left; /* Ensure university names are left-aligned */
+    color: #ffffff; /* Light gray color for heading */
+}
+
+.text_container p {
+    color: #dbdbdb; /* Lighter gray color for paragraph text */
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Experience SECTION */
+
+#Experience {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+ul {
+    text-align: left; 
+    margin: 0; 
+    padding-left: 20px; 
+}
+
+li {
+    margin-bottom: 0.5rem; 
+}
+
+#Education {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+#Publications {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.article_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2.5rem;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 320px;
+    text-align: center;
+}
+
+article .icon {
+    cursor: pointer;
+    height: 90px;
+    margin-bottom: 1rem;
+}
+
+article h3 {
+    font-size: 1.5rem;
+    color: #e0e0e0; /* Light gray color for article headings */
+}
+
+article p {
+    color: #b0b0b0; /* Lighter gray color for article text */
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.education-header {
+    margin-bottom: 0.5rem;
+}
+
+.education-details {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* PROJECTS SECTION */
+
+#projects {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+
+#Skills {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.details_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3.5rem;
+    margin-top: 2rem;
+}
+
+.badge-item {
+    display: flex;                /* Flexbox for vertical alignment */
+    flex-direction: column;       /* Stack the image and text vertically */
+    align-items: center;          /* Center align items */
+    text-align: center;           /* Center align text */
+    background-color: #000;       /* White background for each badge */
+    border: none;       /* Light gray border */
+    border-radius: 8px;           /* Rounded corners */
+    padding: 10px;                /* Padding inside each badge */
+    width: 150px;                 /* Fixed width for badges */
+}
+
+.details_box {
+    border: 1px solid #444; /* Dark gray border */
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #333; /* Dark gray background */
+    max-width: 100%;
+    /* width: 100%; */
+}
+
+.skills_text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff; /* Light gray text color */
+}
+
+.skills_text strong {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+/* Other sections update to match new theme */
+
+.subdetail_container {
+    background-color: #000000; /* Dark gray background */
+    border: 1px solid #000000; /* Dark gray border */
+    border-radius: 5px;
+    padding: 1.5rem;
+    max-width: 540px;
+    text-align: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.subdetail_container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.project_img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* .project_img {
+    max-width: 100%;              
+    height: auto;                 
+    margin-bottom: 10px;         
+} */
+
+/* OTHER PLATFORMS SECTION */
+
+#Certifications {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.sub-detail_container {
+    background-color: #000000; /* Dark gray background */
+    border: none; /* solid #000000; Dark gray border */
+    border-radius: 5px;
+    padding: 1.5rem;
+    max-width: 235px;
+    text-align: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.sub-detail_container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+a.platform-link {
+    color: #e0e0e0; /* Light gray color for platform links */
+    text-decoration: none;
+    text-decoration-color: none;
+}
+
+/* CONTACT SECTION */
+
+#contact {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.contact-card {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0; /* Light gray color for labels */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #555; /* Dark gray border */
+    border-radius: 5px;
+    background-color: #222; /* Darker background for input fields */
+    color: #e0e0e0; /* Light gray text for input fields */
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-button {
+    background: linear-gradient(90deg, #6091cc, #ef8ebf);
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #4f7ebf;
+    transform: scale(1.05);
+}
+
+.contact-info {
+    text-align: left;
+    display: inline-block;
+    flex: 1;
+    max-width: 400px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.3rem;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+.contact-info h2 {
+    font-size: 1.5rem;
+    color: #e0e0e0; /* Light gray color for contact info heading */
+}
+
+.contact-info a {
+    color: #e0e0e0; /* Light gray color for contact info links */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: rgb(96, 145, 204);
+}
+
+/* FOOTER SECTION */
+
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: #222; /* Dark background for footer */
+}
+
+footer p {
+    margin: 0;
+    color: #e0e0e0; /* Light gray color for footer text */
+}
+
+footer p::before {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}

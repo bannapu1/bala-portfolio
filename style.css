@@ -363,8 +363,8 @@ article p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 3.5rem;
-    margin-top: 2rem;
+    gap: 2.5rem;
+    margin-top: 1rem;
 }
 
 .badge-item {
